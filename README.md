@@ -6,7 +6,8 @@
 **Academic Year:** 2026/27  
 **GitHub Repository:** https://github.com/ahmed-ali-shah/skin-lesion-classification  
 **Group:** 1
-**Group Members:** [Insert all members' full names and matriculation numbers]
+**Group Members:** Yaaseen Malani H00442735
+                   Ahmed Shah H00487992
 
 ---
 
