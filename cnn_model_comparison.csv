@@ -1,0 +1,3 @@
+Model,Validation Macro F1,Validation Accuracy
+Small CNN,0.3585,0.5358
+ResNet18 (Frozen Backbone),0.4353670604588587,0.5856741573033708
