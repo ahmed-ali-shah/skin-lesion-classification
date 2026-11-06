@@ -1,0 +1,21 @@
+{
+    "random_state": 123,
+    "features": [
+        "age",
+        "sex",
+        "localization"
+    ],
+    "target": "dx",
+    "selection_metric": "macro_f1",
+    "selected_traditional_model": {
+        "name": "KNeighborsClassifier",
+        "n_neighbors": 11,
+        "weights": "distance"
+    },
+    "selected_image_model": {
+        "name": "ResNet18",
+        "checkpoint": "best_resnet18_finetuned.pth",
+        "selection_epoch": 3
+    },
+    "test_split": "test"
+}
