@@ -1,0 +1,4 @@
+Model,Practical Strength,Practical Limitation,Validation Macro F1,Suitable for Clinical Deployment
+Decision Tree,Interpretable rules using clinical metadata,Poor minority-class recognition; risk of overfitting,0.2191,False
+kNN,Similarity-based classification using previously labelled examples,"Sensitive to feature scaling, neighbour choice and imbalance",0.2352,False
+Naive Bayes,Simple and computationally inexpensive probabilistic baseline,Strong distributional assumptions and poor minority-class recognition,0.2115,False

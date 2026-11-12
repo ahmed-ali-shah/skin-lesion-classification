@@ -1,0 +1,10 @@
+{
+    "model": "Decision Tree",
+    "evaluation_split": "validation",
+    "accuracy": 0.672752808988764,
+    "balanced_accuracy": 0.21545087235828728,
+    "macro_f1": 0.21911775675388748,
+    "max_depth": null,
+    "min_samples_leaf": 5,
+    "class_weight": null
+}

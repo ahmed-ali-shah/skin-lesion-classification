@@ -1,0 +1,14 @@
+Model,Accuracy,Balanced Accuracy,Macro F1,Experiment,Evaluation
+Improved ResNet18,0.7282303370786517,0.7033695127015661,0.6103008725768749,Transfer Learning,Validation
+First Fine-tuned ResNet18,0.6235955056,0.6680846527,0.485708566,Transfer Learning,Validation
+Frozen ResNet18,0.5856741573,,0.4353670605,Transfer Learning,Validation
+Original Small CNN,0.5358,,0.3585,CNN,Validation
+Weighted_CNN,0.5379213483146067,0.4353832684784125,0.3431512093520554,CNN Ablation,Validation
+Unweighted_CNN,0.6825842696629213,0.2599041832204703,0.2767802787691962,CNN Ablation,Validation
+kNN,0.6629,0.2311,0.2352,Classical ML,Validation
+Random Forest,0.4171,0.3079,0.2281,Classical ML,Validation
+Balanced ANN,0.4058988764,0.2925602269,0.2273029409,Metadata ANN,Validation
+Decision Tree (Tuned),0.672752808988764,0.2154508723582872,0.2191177567538874,Classical ML,Validation
+Original ANN,0.6959269663,0.216395093,0.2138518647,Metadata ANN,Validation
+Naive Bayes (Tuned),0.6966292134831461,0.2119347413175662,0.2114557564581525,Classical ML,Validation
+Logistic Regression,0.4052,0.3398,0.2021,Classical ML,Validation

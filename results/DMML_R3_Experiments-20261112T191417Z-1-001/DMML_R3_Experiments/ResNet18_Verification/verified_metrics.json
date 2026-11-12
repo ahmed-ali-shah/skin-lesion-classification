@@ -1,0 +1,9 @@
+{
+    "model": "Improved ResNet18",
+    "checkpoint_epoch": 17,
+    "evaluation_split": "validation",
+    "accuracy": 0.7282303370786517,
+    "balanced_accuracy": 0.7033695127015661,
+    "macro_f1": 0.6103008725768749,
+    "validation_images": 1424
+}

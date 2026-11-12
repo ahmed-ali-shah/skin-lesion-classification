@@ -1,0 +1,97 @@
+Project,File,Relative Path,Extension,Size MB
+Original DMML Project,Copy of HAM10000_Data_Preparation.ipynb,Copy of HAM10000_Data_Preparation.ipynb,.ipynb,1.4
+Original DMML Project,HAM10000_Model_Improvement.ipynb,HAM10000_Model_Improvement.ipynb,.ipynb,0.162
+Original DMML Project,HAM10000_images_part_1.zip,HAM10000 Images/HAM10000_images_part_1.zip,.zip,1303.217
+Original DMML Project,HAM10000_images_part_2.zip,HAM10000 Images/HAM10000_images_part_2.zip,.zip,1338.545
+Original DMML Project,best_small_cnn.pth,CNN Results/best_small_cnn.pth,.pth,0.286
+Original DMML Project,small_cnn_training_history.csv,CNN Results/small_cnn_training_history.csv,.csv,0.001
+Original DMML Project,small_cnn_loss.png,CNN Results/small_cnn_loss.png,.png,0.146
+Original DMML Project,small_cnn_accuracy.png,CNN Results/small_cnn_accuracy.png,.png,0.153
+Original DMML Project,small_cnn_macro_f1.png,CNN Results/small_cnn_macro_f1.png,.png,0.103
+Original DMML Project,small_cnn_confusion_matrix.png,CNN Results/small_cnn_confusion_matrix.png,.png,0.181
+Original DMML Project,cnn_model_comparison.csv,CNN Results/cnn_model_comparison.csv,.csv,0.0
+Original DMML Project,metadata_feature_importance.png,Feature Analysis/metadata_feature_importance.png,.png,0.07
+Original DMML Project,metadata_feature_importance.csv,Feature Analysis/metadata_feature_importance.csv,.csv,0.0
+Original DMML Project,model_config.json,Final Evaluation/model_config.json,.json,0.0
+Original DMML Project,final_test_results.csv,Final Evaluation/final_test_results.csv,.csv,0.0
+Original DMML Project,knn_test_confusion.png,Final Evaluation/knn_test_confusion.png,.png,0.165
+Original DMML Project,resnet18_test_confusion.png,Final Evaluation/resnet18_test_confusion.png,.png,0.176
+Original DMML Project,HAM10000_metadata.csv,data/HAM10000_metadata.csv,.csv,0.658
+Original DMML Project,HAM10000_splits.csv,data/HAM10000_splits.csv,.csv,0.324
+Original DMML Project,class_distribution.png,results/class_distribution.png,.png,0.087
+Original DMML Project,age_distribution.png,results/age_distribution.png,.png,0.087
+Original DMML Project,location_distribution.png,results/location_distribution.png,.png,0.153
+Original DMML Project,feature_importance.png,results/feature_importance.png,.png,0.062
+Original DMML Project,feature_importance.csv,results/feature_importance.csv,.csv,0.0
+Original DMML Project,feature_selection_comparison.csv,results/feature_selection_comparison.csv,.csv,0.0
+Original DMML Project,kmeans_pca.png,results/kmeans_pca.png,.png,0.155
+Original DMML Project,clustering_results.csv,results/clustering_results.csv,.csv,0.0
+Original DMML Project,traditional_ml_results.csv,results/traditional_ml_results.csv,.csv,0.0
+Original DMML Project,hyperparameter_tuning_comparison.png,results/hyperparameter_tuning_comparison.png,.png,0.086
+Original DMML Project,hyperparameter_tuning_summary.csv,results/hyperparameter_tuning_summary.csv,.csv,0.0
+Original DMML Project,logistic_regression_confusion_matrix.png,results/logistic_regression_confusion_matrix.png,.png,0.194
+Original DMML Project,decision_tree_confusion_matrix.png,results/decision_tree_confusion_matrix.png,.png,0.186
+Original DMML Project,random_forest_confusion_matrix.png,results/random_forest_confusion_matrix.png,.png,0.191
+Original DMML Project,knn_confusion_matrix.png,results/knn_confusion_matrix.png,.png,0.166
+Original DMML Project,r3_per_class_results.csv,results/r3_per_class_results.csv,.csv,0.002
+Original DMML Project,original_ann_confusion_matrix.png,results/original_ann_confusion_matrix.png,.png,0.165
+Original DMML Project,balanced_ann_confusion_matrix.png,results/balanced_ann_confusion_matrix.png,.png,0.185
+Original DMML Project,ann_results.csv,results/ann_results.csv,.csv,0.0
+Original DMML Project,small_cnn_training_curves.png,results/small_cnn_training_curves.png,.png,0.231
+Original DMML Project,frozen_resnet18_training_curves.png,results/frozen_resnet18_training_curves.png,.png,0.271
+Original DMML Project,fine_tuned_resnet18_training_curves.png,results/fine_tuned_resnet18_training_curves.png,.png,0.234
+Original DMML Project,cnn_validation_comparison.csv,results/cnn_validation_comparison.csv,.csv,0.0
+Original DMML Project,final_test_comparison.png,results/final_test_comparison.png,.png,0.088
+Original DMML Project,resnet18_improvement.png,results/resnet18_improvement.png,.png,0.174
+Original DMML Project,HAM10000_Master_Chronological_Project_Report (1).pdf,report/HAM10000_Master_Chronological_Project_Report (1).pdf,.pdf,3.921
+Original DMML Project,resnet18_training_history.csv,CNN Results/ResNet18/resnet18_training_history.csv,.csv,0.001
+Original DMML Project,best_resnet18.pth,CNN Results/ResNet18/best_resnet18.pth,.pth,42.755
+Original DMML Project,resnet18_confusion_matrix.png,CNN Results/ResNet18/resnet18_confusion_matrix.png,.png,0.19
+Original DMML Project,resnet18_loss.png,CNN Results/ResNet18/resnet18_loss.png,.png,0.163
+Original DMML Project,resnet18_accuracy.png,CNN Results/ResNet18/resnet18_accuracy.png,.png,0.15
+Original DMML Project,resnet18_macro_f1.png,CNN Results/ResNet18/resnet18_macro_f1.png,.png,0.138
+Original DMML Project,best_resnet18_finetuned.pth,CNN Results/ResNet18/best_resnet18_finetuned.pth,.pth,42.726
+Original DMML Project,resnet18_finetuning_history.csv,CNN Results/ResNet18/resnet18_finetuning_history.csv,.csv,0.001
+Original DMML Project,finetuned_resnet18_confusion_matrix.png,CNN Results/ResNet18/finetuned_resnet18_confusion_matrix.png,.png,0.18
+Original DMML Project,finetuned_resnet18_loss.png,CNN Results/ResNet18/finetuned_resnet18_loss.png,.png,0.144
+Original DMML Project,finetuned_resnet18_accuracy.png,CNN Results/ResNet18/finetuned_resnet18_accuracy.png,.png,0.132
+Original DMML Project,finetuned_resnet18_macro_f1.png,CNN Results/ResNet18/finetuned_resnet18_macro_f1.png,.png,0.118
+Original DMML Project,best_improved_resnet18.pth,CNN Results/ResNet18/Improvement_Experiment/best_improved_resnet18.pth,.pth,42.726
+Original DMML Project,improvement_history.csv,CNN Results/ResNet18/Improvement_Experiment/improvement_history.csv,.csv,0.002
+Original DMML Project,original_resnet18_confusion.png,CNN Results/ResNet18/Improvement_Experiment/original_resnet18_confusion.png,.png,0.191
+Original DMML Project,improved_resnet18_confusion.png,CNN Results/ResNet18/Improvement_Experiment/improved_resnet18_confusion.png,.png,0.185
+Original DMML Project,model_comparison.csv,CNN Results/ResNet18/Improvement_Experiment/model_comparison.csv,.csv,0.0
+Original DMML Project,per_class_recall_comparison.csv,CNN Results/ResNet18/Improvement_Experiment/per_class_recall_comparison.csv,.csv,0.0
+New Experiments,master_experiment_results.csv,master_experiment_results.csv,.csv,0.001
+New Experiments,master_experiment_results_complete.csv,master_experiment_results_complete.csv,.csv,0.001
+New Experiments,r3_practical_model_evaluation.csv,r3_practical_model_evaluation.csv,.csv,0.001
+New Experiments,naive_bayes_classification_report.csv,Naive_Bayes/naive_bayes_classification_report.csv,.csv,0.001
+New Experiments,naive_bayes_tuning.csv,Naive_Bayes/naive_bayes_tuning.csv,.csv,0.001
+New Experiments,naive_bayes_confusion_matrix.png,Naive_Bayes/naive_bayes_confusion_matrix.png,.png,0.129
+New Experiments,best_naive_bayes.joblib,Naive_Bayes/best_naive_bayes.joblib,.joblib,0.006
+New Experiments,model_metrics.json,Naive_Bayes/model_metrics.json,.json,0.0
+New Experiments,best_decision_tree.joblib,Decision_Tree/best_decision_tree.joblib,.joblib,0.061
+New Experiments,decision_tree_tuning.csv,Decision_Tree/decision_tree_tuning.csv,.csv,0.003
+New Experiments,decision_tree_classification_report.csv,Decision_Tree/decision_tree_classification_report.csv,.csv,0.001
+New Experiments,decision_tree_confusion_matrix.png,Decision_Tree/decision_tree_confusion_matrix.png,.png,0.128
+New Experiments,model_metrics.json,Decision_Tree/model_metrics.json,.json,0.0
+New Experiments,five_model_comparison.csv,Comparison/five_model_comparison.csv,.csv,0.0
+New Experiments,five_model_comparison.png,Comparison/five_model_comparison.png,.png,0.169
+New Experiments,five_fold_grouped_cv_results.csv,Cross_Validation/five_fold_grouped_cv_results.csv,.csv,0.001
+New Experiments,kmeans_cluster_count_results.csv,Clustering/kmeans_cluster_count_results.csv,.csv,0.0
+New Experiments,kmeans_silhouette_sweep.png,Clustering/kmeans_silhouette_sweep.png,.png,0.138
+New Experiments,kmeans_elbow_plot.png,Clustering/kmeans_elbow_plot.png,.png,0.122
+New Experiments,kmeans_full_cluster_evaluation.csv,Clustering/kmeans_full_cluster_evaluation.csv,.csv,0.001
+New Experiments,cnn_ablation_comparison.csv,CNN_Ablation/cnn_ablation_comparison.csv,.csv,0.0
+New Experiments,validation_predictions.csv,ResNet18_Verification/validation_predictions.csv,.csv,0.027
+New Experiments,verified_metrics.json,ResNet18_Verification/verified_metrics.json,.json,0.0
+New Experiments,best_model.pth,CNN_Ablation/Weighted_CNN/best_model.pth,.pth,0.096
+New Experiments,training_history.csv,CNN_Ablation/Weighted_CNN/training_history.csv,.csv,0.001
+New Experiments,latest_checkpoint.pth,CNN_Ablation/Weighted_CNN/latest_checkpoint.pth,.pth,0.286
+New Experiments,classification_report.csv,CNN_Ablation/Weighted_CNN/classification_report.csv,.csv,0.001
+New Experiments,confusion_matrix.png,CNN_Ablation/Weighted_CNN/confusion_matrix.png,.png,0.133
+New Experiments,best_model.pth,CNN_Ablation/Unweighted_CNN/best_model.pth,.pth,0.096
+New Experiments,training_history.csv,CNN_Ablation/Unweighted_CNN/training_history.csv,.csv,0.001
+New Experiments,latest_checkpoint.pth,CNN_Ablation/Unweighted_CNN/latest_checkpoint.pth,.pth,0.286
+New Experiments,classification_report.csv,CNN_Ablation/Unweighted_CNN/classification_report.csv,.csv,0.001
+New Experiments,confusion_matrix.png,CNN_Ablation/Unweighted_CNN/confusion_matrix.png,.png,0.13

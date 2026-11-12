@@ -1,0 +1,13 @@
+{
+    "model": "Gaussian Naive Bayes",
+    "features": [
+        "age",
+        "sex",
+        "localization"
+    ],
+    "validation_accuracy": 0.6966292134831461,
+    "validation_balanced_accuracy": 0.21193474131756623,
+    "validation_macro_f1": 0.2114557564581525,
+    "best_var_smoothing": 0.1,
+    "evaluation_split": "validation"
+}
