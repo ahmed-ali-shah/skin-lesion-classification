@@ -22,11 +22,11 @@ Thumbs.db
 *.key
 *.pem
 
-# Dataset files - do not upload raw HAM10000 data
+# Dataset images - do not upload raw HAM10000 images
+# (the metadata and split CSVs in data/ are included on purpose)
 HAM10000_images_part_1.zip
 HAM10000_images_part_2.zip
 HAM10000_images/
-HAM10000_metadata.csv
 
 # Model checkpoints
 *.pth
