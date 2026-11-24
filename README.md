@@ -1,198 +1,138 @@
 # HAM10000 Skin Lesion Classification
 
-**Seven-class skin lesion classification using traditional machine learning and deep learning**
+**Seven-class skin lesion classification with metadata-based classical models and image-based neural networks**
 
-**Course:** F20DL – Data Mining and Machine Learning  
-**Academic Year:** 2026/27  
-**GitHub Repository:** https://github.com/ahmed-ali-shah/skin-lesion-classification  
+**Course:** F20DL – Data Mining and Machine Learning
+**Academic year:** 2026/27
 **Group:** 1
-**Group Members:** Ahmed Shah H00487992,
-                   Yaaseen Malani H00442735,
-                   Dhruv Laha H00490130,
-                   Jabez Vas H00430097,
-                   Misha Chandel H00445699
+
+| Member | Matriculation number |
+|---|---|
+| Ahmed Shah | H00487992 |
+| Yaaseen Malani | H00442735 |
+| Dhruv Laha | H00490130 |
+| Jabez Vas | H00430097 |
+| Misha Chandel | H00445699 |
 
 ---
 
-## 1. Project Overview
+## 1. Project overview
 
-This project investigates how effectively metadata-based machine-learning models and image-based neural networks can classify the seven diagnostic categories in the HAM10000 skin lesion dataset, particularly under substantial class imbalance.
+The project asks how well the seven HAM10000 lesion classes can be separated using only patient metadata (age, sex and body site), and how much image-based neural networks add, under strong class imbalance. Models are selected on validation **Macro F1**, with balanced accuracy reported alongside.
 
-The project compares traditional machine-learning approaches using patient and lesion metadata against neural-network approaches that learn directly from dermatoscopic images.
+All experiments use one fixed **lesion-grouped** train / validation / test split (`StratifiedGroupKFold`, grouped by `lesion_id`), so no lesion appears in more than one partition.
 
-The main objective is to evaluate the strengths and limitations of both approaches using appropriate classification metrics, with particular attention to macro F1-score and balanced accuracy.
-
-**Research question:**
-
-How effectively can metadata-based machine-learning models and image-based neural networks classify the seven HAM10000 lesion categories, particularly under substantial class imbalance?
+| Partition | Images | Lesions |
+|---|---:|---:|
+| Train | 7,169 | 5,335 |
+| Validation | 1,424 | 1,068 |
+| Test | 1,422 | 1,067 |
 
 ## 2. Dataset
 
-The project uses the HAM10000 dataset, containing 10,015 dermatoscopic images across seven diagnostic categories.
+HAM10000 (Tschandl, Rosendahl and Kittler, *Scientific Data*, 2018) contains 10,015 dermoscopic images in seven classes: akiec, bcc, bkl, df, mel, nv and vasc. It is available from [Harvard Dataverse](https://doi.org/10.7910/DVN/DBW86T) under the **CC BY-NC 4.0** licence (non-commercial use, with attribution).
 
-The diagnostic classes are:
+This repository includes the metadata CSV and our split assignments in `data/`. **It does not include the images**: download `HAM10000_images_part_1.zip` and `HAM10000_images_part_2.zip` from Dataverse.
 
-| Code | Diagnostic category |
-|---|---|
-| akiec | Actinic keratoses and intraepithelial carcinoma |
-| bcc | Basal cell carcinoma |
-| bkl | Benign keratosis-like lesions |
-| df | Dermatofibroma |
-| mel | Melanoma |
-| nv | Melanocytic nevi |
-| vasc | Vascular lesions |
+Predictors for the metadata models: `age`, `sex`, `localization`. The ID columns, `dataset` and `dx_type` are excluded (`dx_type` leaks the label).
 
-The dataset is highly imbalanced, with melanocytic nevi (`nv`) representing the majority of images.
-
-Metadata used in the metadata-based models includes:
-
-- Age
-- Sex
-- Localization
-
-Identifiers such as `lesion_id` and `image_id` are used for identification and data splitting rather than as model predictors. Diagnosis-related information that could cause target leakage is excluded from the predictors.
-
-**Dataset source:** HAM10000 – A Large Collection of Multi-Source Dermatoscopic Images of Common Pigmented Skin Lesions.
-
-**Dataset paper:** Tschandl, P., Rosendahl, C. and Kittler, H. (2018), *The HAM10000 dataset, a large collection of multi-source dermatoscopic images of common pigmented skin lesions*, Scientific Data.
-
-The dataset is not included in this repository. Users must obtain it from the official dataset source and comply with its licence and usage conditions.
-
-## 3. Methodology
-
-The project is implemented in a Google Colab Jupyter notebook.
-
-### 3.1 Data preparation and exploratory analysis
-
-The workflow includes:
-
-- Loading and inspecting the HAM10000 metadata.
-- Examining class distributions and class imbalance.
-- Investigating missing values.
-- Preprocessing numerical and categorical metadata.
-- Exploring relationships between metadata features and diagnostic classes.
-- Applying PCA for dimensionality reduction.
-- Applying K-Means and Gaussian Mixture Model clustering.
-
-### 3.2 Data splitting
-
-The dataset is divided into training, validation and testing subsets using `StratifiedGroupKFold`, with `lesion_id` used as the grouping variable.
-
-This approach is intended to prevent images belonging to the same lesion from appearing in multiple subsets.
-
-The recorded split is:
-
-| Subset | Number of images |
-|---|---:|
-| Training | 7,169 |
-| Validation | 1,424 |
-| Testing | 1,422 |
-| **Total** | **10,015** |
-
-The notebook includes a check for lesion overlap between the subsets.
-
-### 3.3 Traditional machine learning
-
-The metadata-based classification experiments include:
-
-- Logistic Regression
-- Random Forest
-- k-Nearest Neighbours (kNN)
-- Decision Tree
-
-The models are evaluated and compared using validation metrics. The selected kNN configuration uses 11 neighbours with distance weighting.
-
-### 3.4 Neural networks and image classification
-
-The image-based experiments include:
-
-- A Multi-Layer Perceptron (MLP).
-- A custom Convolutional Neural Network (CNN).
-- ResNet18 transfer learning with a frozen backbone.
-- Fine-tuning of ResNet18.
-
-The neural-network experiments use image preprocessing and training strategies designed to address class imbalance and improve generalisation.
-
-## 4. Final Test Results
-
-The final held-out test evaluation compares the selected metadata-based kNN model with the fine-tuned ResNet18 image classifier.
-
-| Model | Accuracy | Balanced Accuracy | Macro F1 |
-|---|---:|---:|---:|
-| kNN (Metadata) | 0.6238 | 0.2126 | 0.2057 |
-| Fine-tuned ResNet18 (Images) | 0.6181 | 0.6085 | 0.4650 |
-
-The fine-tuned ResNet18 achieves a substantially higher balanced accuracy and macro F1-score than the metadata-based kNN model.
-
-Although kNN obtains slightly higher overall accuracy, its low balanced accuracy and macro F1 indicate poor performance across the minority classes. This demonstrates why accuracy alone is insufficient for evaluating models trained on highly imbalanced datasets.
-
-The results also show that image-based features provide stronger classification performance than the selected metadata-only approach in this experiment.
-
-These results are from the recorded notebook evaluation and are not evidence of clinical diagnostic performance.
-
-## 5. Repository Structure
+## 3. Repository structure
 
 ```text
 skin-lesion-classification/
-│
-├── Copy_of_HAM10000_Data_Preparation.ipynb
 ├── README.md
 ├── requirements.txt
 ├── .gitignore
-│
+├── data/
+│   ├── HAM10000_metadata.csv        original metadata (10,015 rows)
+│   └── HAM10000_splits.csv          frozen train/val/test assignment used for every result
+├── notebooks/
+│   ├── 01_data_split_classical_ml_and_cnns.ipynb
+│   ├── 02_r3_additional_experiments.ipynb
+│   ├── 03_resnet18_extended_finetuning.ipynb
+│   └── original/                    the unedited Colab notebooks, with every output, error and recovery cell
+│       ├── Copy_of_HAM10000_Data_Preparation.ipynb
+│       ├── HAM10000_R3_Outstanding_Experiments.ipynb
+│       └── HAM10000_Model_Improvement.ipynb
 └── results/
-    ├── final_test_results.csv
-    ├── knn_test_confusion.png
-    └── resnet18_test_confusion.png
+    ├── final_test_results.csv, knn_test_confusion.png, resnet18_test_confusion.png   held-out test
+    ├── model_config.json            model choices frozen before testing
+    ├── small_cnn_*, best_small_cnn.pth, cnn_model_comparison.csv
+    ├── metadata_feature_importance.csv / .png
+    └── r3_experiments/              outputs of notebook 02 (Naive Bayes, decision tree,
+                                     cross-validation, clustering sweep, CNN ablation, ResNet18 check)
 ```
 
-The `results/` files should be added after confirming that the corresponding files exist and match the final notebook evaluation.
+The three numbered notebooks are cleaned, ordered versions of the originals: recovery cells (from Colab disconnections) and failed cells are left out, and markdown explains each step. Their outputs are the outputs of the original Colab runs. The originals are kept unedited in `notebooks/original/`.
 
-## 6. How to Run the Project
+## 4. How to run
 
-The project was developed using Google Colab.
+The project was run in **Google Colab with a T4 GPU**.
 
-1. Clone or download this repository.
-2. Open the notebook in Google Colab.
-3. Obtain the HAM10000 dataset from its official source.
-4. Upload or mount the dataset in Google Colab.
-5. Install the required Python packages.
-6. Update the dataset paths if necessary.
-7. Execute the notebook cells in order.
+1. In Google Drive, create this folder:
 
-**Open in Google Colab:**
+   ```text
+   MyDrive/DMML Project/
+   ├── data/
+   │   ├── HAM10000_metadata.csv      (copy from data/ in this repository)
+   │   └── HAM10000_splits.csv        (copy from data/ in this repository)
+   └── HAM10000 Images/
+       ├── HAM10000_images_part_1.zip
+       └── HAM10000_images_part_2.zip
+   ```
 
-[Open the project notebook in Google Colab](https://colab.research.google.com/github/ahmed-ali-shah/skin-lesion-classification/blob/main/Copy_of_HAM10000_Data_Preparation.ipynb)
+2. Open the notebooks in Colab, choose *Runtime → Change runtime type → T4 GPU*, and run them in order:
 
-The notebook includes the data preparation, model training, validation and final evaluation workflow. Reproducing the final results requires the same dataset, split assignments, preprocessing configuration and trained checkpoint used in the recorded evaluation.
+   | Order | Notebook | What it does |
+   |---|---|---|
+   | 1 | [01_data_split_classical_ml_and_cnns](https://colab.research.google.com/github/ahmed-ali-shah/skin-lesion-classification/blob/main/notebooks/01_data_split_classical_ml_and_cnns.ipynb) | Split, EDA, LR / RF / kNN / decision tree, metadata MLP, clustering, tuning, feature importance, small CNN, frozen and fine-tuned ResNet18, held-out test |
+   | 2 | [02_r3_additional_experiments](https://colab.research.google.com/github/ahmed-ali-shah/skin-lesion-classification/blob/main/notebooks/02_r3_additional_experiments.ipynb) | Naive Bayes, decision-tree grid, grouped 5-fold CV, K-Means sweep, CNN class-weight ablation, checkpoint checks |
+   | 3 | [03_resnet18_extended_finetuning](https://colab.research.google.com/github/ahmed-ali-shah/skin-lesion-classification/blob/main/notebooks/03_resnet18_extended_finetuning.ipynb) | Extended fine-tuning of ResNet18 (validation only) |
 
-## 7. Technologies Used
+   Notebook 02, Part 9 re-checks the checkpoint created by notebook 03, so run that part after notebook 03.
 
-- Python
-- Google Colab
-- PyTorch
-- Torchvision
-- Scikit-learn
-- Pandas
-- NumPy
-- Matplotlib
-- Seaborn
-- SciPy
+3. Checkpoints and results are saved into the same Drive folder. The ResNet18 checkpoints (about 43 MB each) are not stored in this repository.
+
+## 5. Where each report result comes from
+
+| Report item | Notebook and part |
+|---|---|
+| Split and Table 1 | 01, Part 1 |
+| Figure 1 (class counts, age, body site) | 01, Part 2 |
+| Clustering (§2.5) | 01, Part 5 · k-sweep: 02, Part 6 |
+| Feature importance (§2.5, Appendix D.1) | 01, Part 7 |
+| Tuning grids (Table 2) | 01, Part 6 · decision tree: 02, Part 3 · Naive Bayes: 02, Part 2 |
+| Table 3 (metadata models, CV) | 01, Parts 4 and 6 · 02, Parts 2–5 |
+| Table 4 (image models) | 01, Parts 9–11 · ablation: 02, Part 8 · extended: 03 |
+| Table 5 and Figure 3 (held-out test) | 01, Part 12 |
+
+## 6. Results
+
+**Held-out test set (1,422 images), run once after model selection:**
+
+| Model | Accuracy | Balanced accuracy | Macro F1 |
+|---|---:|---:|---:|
+| Always predict NV | 0.688 | 0.143 | 0.116 |
+| kNN, k = 11, distance-weighted (metadata) | 0.624 | 0.213 | 0.206 |
+| Fine-tuned ResNet18 (images) | 0.618 | 0.609 | 0.465 |
+
+The two models have almost the same accuracy, but only the image model recognises the minority classes.
+
+**Extended fine-tuning (validation only):** ResNet18 reached 0.610 Macro F1, 0.728 accuracy and 0.703 balanced accuracy at epoch 17. It was trained after the test set had been used once, so it has no held-out test score.
+
+## 7. Reproducibility notes
+
+- `data/HAM10000_splits.csv` is the authoritative split. Newer scikit-learn versions shuffle `StratifiedGroupKFold` differently, so re-running the split code does not regenerate the same assignment. Notebook 01 therefore reloads the saved split straight after the split code.
+- Random seeds are 123 or 42, as set in each notebook.
+- Some summary cells in notebook 02 show values computed in notebook 01 as typed-in numbers; the notebook says where each one comes from.
 
 ## 8. Limitations
 
-- The HAM10000 dataset is highly imbalanced.
-- Metadata-only classification has limited ability to distinguish all seven diagnostic categories.
-- Some diagnostic categories have relatively few test examples.
-- The model's performance on HAM10000 does not establish generalisation to other populations, imaging devices or clinical settings.
-- The models are developed for academic research and educational purposes, not for medical diagnosis.
+- HAM10000 is highly imbalanced; DF and VASC have only 14–22 validation and test images each.
+- Grouping by lesion does not guarantee patient independence, and the data come from only two clinics.
+- The neural-network results come from single runs with one seed.
+- The models are for academic study only and are **not** suitable for medical diagnosis.
 
-## 9. Disclaimer
+## 9. Acknowledgements
 
-This project is an academic machine-learning study. Its models are not medical devices and must not be used to diagnose skin conditions or replace assessment by qualified healthcare professionals.
-
-## 10. Acknowledgements
-
-We acknowledge the authors of the HAM10000 dataset and the researchers who made the dataset available for scientific research.
-
-**Coursework group members:** [Add names and matriculation numbers here if required.]
+We thank the authors of the HAM10000 dataset: P. Tschandl, C. Rosendahl and H. Kittler, "The HAM10000 dataset, a large collection of multi-source dermatoscopic images of common pigmented skin lesions," *Scientific Data* 5, 180161 (2018).
