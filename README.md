@@ -136,3 +136,16 @@ The two models have almost the same accuracy, but only the image model recognise
 ## 9. Acknowledgements
 
 We thank the authors of the HAM10000 dataset: P. Tschandl, C. Rosendahl and H. Kittler, "The HAM10000 dataset, a large collection of multi-source dermatoscopic images of common pigmented skin lesions," *Scientific Data* 5, 180161 (2018).
+
+## 10. AI-use declaration
+
+Generative AI tools were used in this project as follows.
+
+**Code.** AI assistants were used as coding aids while writing the notebooks — for example, to suggest and debug code, explain library errors and help structure parts of the training and evaluation code. The group designed the experiments, chose the models and hyperparameter grids, ran all of the code in Google Colab and checked every reported result against the saved outputs.
+
+**Repository organisation (Claude, Anthropic).** Claude was used to tidy and document the repository before submission:
+- reorganised the notebooks into three numbered notebooks (01–03) in run order, built from the group's existing cells, with markdown headings and notes added; the unedited originals are kept in `notebooks/original/`
+- changed the first data-loading cell in notebooks 01 and 02 to read the CSV files from Google Drive instead of `files.upload()`, and added one cell in notebook 01 that reloads the saved split file
+- rewrote this README and added missing packages to `requirements.txt`
+
+No experiment logic, model settings or results were changed by these edits.
